@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mental Health Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Loader -->
+<div id="loader"><div class="spinner"></div></div>
+
+<!-- Navbar -->
+<nav class="nav-bar">
+  <a class="nav-brand" href="index.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png" alt="logo">
+    <span>MH Companion</span>
+  </a>
+  <div class="nav-links">
+    <button onclick="toggleTheme()">🌗 Theme</button>
+    <button onclick="goToSurvey()">📊 Survey</button>
+    <button onclick="goToChat()">💬 Chat</button>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <div class="hero-badge">✦ Mental Wellness Platform</div>
+    <h1>Your mind deserves<br>gentle care.</h1>
+    <p>Track your emotional state, talk to a supportive companion, and build resilience — privately, at your own pace.</p>
+    <div class="hero-pills">
+      <span id="welcome"></span>
+      <span id="streak"></span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <div class="card">
+    <h2>About This Platform</h2>
+    <p>
+      A safe, anonymous space to understand your mental health. Assess your emotional state,
+      track your progress over time, and receive supportive responses — no sign-up, no judgment.
+    </p>
+    <div class="divider"></div>
+    <p>Built to reduce stigma and make mental wellness accessible to everyone through simple, beautifully designed tools.</p>
+    <div style="margin-top: 16px;">
+      <span class="about-chip">🔒 Private</span>
+      <span class="about-chip">🌍 Accessible</span>
+      <span class="about-chip">💙 Supportive</span>
+      <span class="about-chip">📊 Data-driven</span>
+    </div>
+  </div>
+
+  <!-- Features -->
+  <div class="card">
+    <h2>Key Features</h2>
+    <p>Everything you need to understand and support your mental wellness journey.</p>
+    <div class="features-grid">
+      <div class="feature-item">
+        <div class="feature-icon">📊</div>
+        <h3>Happiness Index</h3>
+        <p>Multi-factor mood analysis with visual scoring.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">💬</div>
+        <h3>Anonymous Chat</h3>
+        <p>Talk to an AI companion anytime, no account needed.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📄</div>
+        <h3>Health Reports</h3>
+        <p>Download a PDF summary of your mental wellness data.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔥</div>
+        <h3>Daily Streaks</h3>
+        <p>Build positive habits with streak tracking.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🔊</div>
+        <h3>Voice Interaction</h3>
+        <p>Hear supportive responses read aloud.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">📈</div>
+        <h3>Progress Charts</h3>
+        <p>Visualise your wellness journey over 7 days.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Actions -->
+  <div class="card">
+    <h2>Get Started</h2>
+    <p>Choose an activity to begin your wellness check-in today.</p>
+    <div class="divider"></div>
+    <div class="action-group">
+      <button onclick="goToSurvey()">📊 Take Survey</button>
+      <button onclick="goToChat()">💬 Chat Support</button>
+      <button class="emergency" onclick="emergency()">🚨 Emergency Help</button>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

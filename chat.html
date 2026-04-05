@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Support — Mental Health Companion</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Navbar -->
+<nav class="nav-bar">
+  <a class="nav-brand" href="index.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png" alt="logo">
+    <span>MH Companion</span>
+  </a>
+  <div class="nav-links">
+    <button onclick="goBack()">⬅ Back</button>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="tag">💬 Anonymous Support</div>
+    <h1>Support Chat</h1>
+    <p>Talk freely — your companion is here to listen, always.</p>
+  </div>
+
+  <!-- Chat Card -->
+  <div class="card">
+
+    <!-- Message bubbles -->
+    <div id="chatBox"></div>
+
+    <!-- Typing indicator — JS toggles display, inner structure stays for animation -->
+    <p id="typing" style="display:none;">
+      <span class="typing-dots"><span></span><span></span><span></span></span>
+      Companion is typing…
+    </p>
+
+    <!-- Voice toggle -->
+    <label class="voice-label">
+      <input type="checkbox" id="voiceToggle" checked>
+      🔊 Read responses aloud
+    </label>
+
+    <!-- Input row -->
+    <div class="chat-input-row">
+      <input type="text" id="msg" placeholder="Type a message…">
+      <button onclick="sendMsg()">Send ↑</button>
+    </div>
+
+    <div class="chat-actions">
+      <button class="end-chat" onclick="endChat()">❌ End Chat</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happiness Survey — Mental Health Companion</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- Loader -->
+<div id="loader"><div class="spinner"></div></div>
+
+<!-- Navbar -->
+<nav class="nav-bar">
+  <a class="nav-brand" href="index.html">
+    <img src="https://cdn-icons-png.flaticon.com/512/2966/2966483.png" alt="logo">
+    <span>MH Companion</span>
+  </a>
+  <div class="nav-links">
+    <button onclick="goHome()">🏠 Home</button>
+    <button onclick="goToChat()">💬 Chat</button>
+  </div>
+</nav>
+
+<div class="container">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <div class="tag">📊 Wellness Check-In</div>
+    <h1>Happiness Survey</h1>
+    <p>Rate each dimension of your wellbeing honestly — your score reveals your current mental state.</p>
+  </div>
+
+  <!-- Survey Card -->
+  <div class="card">
+    <h2>Rate Your Dimensions</h2>
+    <p style="margin-bottom: 24px;">Slide each bar to reflect how you feel right now.</p>
+
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>😊 Mood</span>
+        <span class="slider-value"><span id="moodVal">5</span>/10</span>
+      </div>
+      <input type="range" id="mood" min="1" max="10" value="5" oninput="updateValue('mood')">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>😴 Sleep Quality</span>
+        <span class="slider-value"><span id="sleepVal">5</span>/10</span>
+      </div>
+      <input type="range" id="sleep" min="1" max="10" value="5" oninput="updateValue('sleep')">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>😤 Stress Level</span>
+        <span class="slider-value"><span id="stressVal">5</span>/10</span>
+      </div>
+      <input type="range" id="stress" min="1" max="10" value="5" oninput="updateValue('stress')">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>🤝 Social Connection</span>
+        <span class="slider-value"><span id="socialVal">5</span>/10</span>
+      </div>
+      <input type="range" id="social" min="1" max="10" value="5" oninput="updateValue('social')">
+    </div>
+
+    <div class="slider-row">
+      <div class="slider-label">
+        <span>⚡ Motivation</span>
+        <span class="slider-value"><span id="motivationVal">5</span>/10</span>
+      </div>
+      <input type="range" id="motivation" min="1" max="10" value="5" oninput="updateValue('motivation')">
+    </div>
+
+    <div class="divider"></div>
+
+    <button onclick="calculate()">✦ Analyse My Wellbeing</button>
+
+    <!-- Result: must be a div, not h3, so JS innerText + classes work correctly -->
+    <div id="result"></div>
+  </div>
+
+  <!-- Chart Card -->
+  <div class="card">
+    <h2>📈 Your Progress</h2>
+    <p>Your happiness score over the last 7 days.</p>
+    <canvas id="chart" height="250" style="margin-top: 16px;"></canvas>
+  </div>
+
+  <!-- Download -->
+  <div style="text-align: center; padding: 8px 0 20px;">
+    <button onclick="downloadPDF()">📄 Download Full Report</button>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
